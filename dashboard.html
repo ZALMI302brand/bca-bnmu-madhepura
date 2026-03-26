@@ -1,9 +1,15 @@
 <script>
-function goMarksheet(){
-window.location="Marseet.html";
+function verify(){
+var r=document.getElementById("roll").value;
+var rc=document.getElementById("rollcode").value;
+var reg=document.getElementById("reg").value;
+var e=document.getElementById("email").value;
+var p=document.getElementById("pass").value;
+
+if(r=="562" && rc=="1762" && reg=="1436" && e=="shivamhg186@gmail.com" && p=="shivam@@"){
+window.location="View.html";
+}else{
+alert("Wrong Details");
+}
 }
 </script>
-
-<button onclick="goMarksheet()">Marksheet</button>
-<button>Admit Card</button>
-<button onclick="window.location='index.html'">Logout</button>
