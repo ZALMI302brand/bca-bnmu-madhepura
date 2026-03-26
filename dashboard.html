@@ -1,9 +1,31 @@
-<script>
-function goMarksheet(){
-window.location="Marseet.html";
-}
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+<title>BNMU Dashboard</title>
+<style>
+body{margin:0;font-family:Arial;background:#eef2f7;text-align:center;}
+.header{background:#002147;color:white;padding:15px 30px;
+display:flex;justify-content:space-between;}
+.container{margin-top:120px;}
+button{padding:12px 30px;margin:15px;background:#002147;
+color:white;border:none;cursor:pointer;}
+</style>
+</head>
+<body>
 
-<button onclick="goMarksheet()">Marksheet</button>
-<button>Admit Card</button>
+<div class="header">
+<h2>BNMU UNIVERSITY</h2>
+<h3>BCA</h3>
+</div>
+
+<div class="container">
+<h2>Student Dashboard</h2>
+<button onclick="window.location='Marseet.html'">Admit Card</button>
+<button onclick="window.location='Marseet.html'">Marksheet</button>
+<button onclick="alert('BNMU Information Page')">BNMU Information</button>
+<br><br>
 <button onclick="window.location='index.html'">Logout</button>
+</div>
+
+</body>
+</html>
