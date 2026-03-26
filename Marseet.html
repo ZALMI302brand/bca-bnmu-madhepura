@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Marksheet Verification</title>
+<style>
+body{margin:0;font-family:Arial;background:#eef2f7;text-align:center;}
+.header{background:#203a43;color:white;display:flex;align-items:center;padding:10px 20px;}
+.header img{width:50px;height:50px;border-radius:50%;margin-right:15px;}
+.container{width:350px;margin:50px auto;background:white;padding:25px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);border-radius:10px;}
+input,button{width:100%;padding:10px;margin:8px 0;}
+button{background:#203a43;color:white;border:none;}
+</style>
+</head>
+<body>
+
+<div class="header">
+<img src="thumbnail.jpg">
+<h3>B.N.M.U Madhepura - Marksheet</h3>
+</div>
+
+<div class="container">
+<input type="text" id="roll" placeholder="Roll Number">
+<input type="text" id="rollcode" placeholder="Roll Code">
+<input type="text" id="reg" placeholder="Registration Number">
+<input type="email" id="email" placeholder="Email ID">
+<input type="password" id="pass" placeholder="Password">
+<button onclick="verify()">Open</button>
+<button onclick="window.location='dashboard.html'">Back</button>
+</div>
+
+<script>
+function verify(){
+var r=document.getElementById("roll").value;
+var rc=document.getElementById("rollcode").value;
+var reg=document.getElementById("reg").value;
+var e=document.getElementById("email").value;
+var p=document.getElementById("pass").value;
+
+if(r=="562" && rc=="1762" && reg=="1436" && e=="shivamhg186@gmail.com" && p=="shivam@@"){
+window.location="view.html";
+}else{
+alert("Wrong Details");
+}
+}
+</script>
+
+</body>
+</html>
