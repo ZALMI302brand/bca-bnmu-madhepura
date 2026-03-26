@@ -1,99 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>B.N.M.U Madhepura - Student Portal</title>
-
+<title>B.N.M.U Student Portal</title>
 <style>
-body{
-    margin:0;
-    font-family:Arial;
-    background:#f2f2f2;
-}
-
-/* Header */
-.header{
-    background:#203a43;
-    color:white;
-    display:flex;
-    align-items:center;
-    padding:10px 20px;
-}
-
-.header img{
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    margin-right:15px;
-}
-
-.container{
-    width:350px;
-    margin:60px auto;
-    background:white;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.3);
-    text-align:center;
-}
-
-input{
-    width:100%;
-    padding:10px;
-    margin:8px 0;
-}
-
-button{
-    width:100%;
-    padding:10px;
-    background:#203a43;
-    color:white;
-    border:none;
-    cursor:pointer;
-}
-
-#marksheet{
-    display:none;
-    margin-top:20px;
-}
-
-#marksheet img{
-    width:100%;
-}
+body{margin:0;font-family:Arial;background:#eef2f7;}
+.header{background:#203a43;color:white;display:flex;align-items:center;padding:10px 20px;}
+.header img{width:50px;height:50px;border-radius:50%;margin-right:15px;}
+.container{width:350px;margin:80px auto;background:white;padding:25px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);border-radius:10px;text-align:center;}
+input,button{width:100%;padding:10px;margin:8px 0;}
+button{background:#203a43;color:white;border:none;cursor:pointer;}
+.link{background:#555;}
 </style>
 </head>
-
 <body>
 
-<!-- Header with Thumbnail -->
 <div class="header">
-    <img src="thumbnail.jpg">
-    <h3>B.N.M.U Madhepura - Student Portal</h3>
+<img src="thumbnail.jpg">
+<h3>B.N.M.U Madhepura - Student Portal</h3>
 </div>
 
 <div class="container">
-
-<input type="text" id="mobile" placeholder="Enter Mobile Number">
-<input type="password" id="password" placeholder="Enter Password">
-
+<h3>Student Login</h3>
+<input type="text" id="mobile" placeholder="Mobile Number">
+<input type="password" id="password" placeholder="Password">
 <button onclick="login()">Login</button>
-
-<div id="marksheet">
-    <h3>Student Marksheet</h3>
-    <img src="IMG_20260312_142131.jpg">
-</div>
-
+<button class="link" onclick="window.location='register.html'">New Registration</button>
 </div>
 
 <script>
 function login(){
-    var mobile=document.getElementById("mobile").value;
-    var password=document.getElementById("password").value;
+var m=document.getElementById("mobile").value;
+var p=document.getElementById("password").value;
 
-    if(mobile=="7280804309" && password=="shivam@@"){
-        document.getElementById("marksheet").style.display="block";
-    }else{
-        alert("Wrong Mobile Number or Password");
-    }
+if(m=="7280804309" && p=="shivam@@"){
+window.location="dashboard.html";
+}else{
+alert("Invalid Login Details");
+}
 }
 </script>
 
