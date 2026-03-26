@@ -1,208 +1,101 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Shivam Singh University</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B.N.M.U Madhepura - Student Portal</title>
+
 <style>
 body{
     margin:0;
-    font-family:Arial, sans-serif;
-    background:#eef2f7;
+    font-family:Arial;
+    background:#f2f2f2;
 }
+
+/* Header */
 .header{
-    background:#001f3f;
+    background:#203a43;
     color:white;
-    padding:15px;
-    text-align:center;
-    font-size:22px;
-    font-weight:bold;
+    display:flex;
+    align-items:center;
+    padding:10px 20px;
 }
+
+.header img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    margin-right:15px;
+}
+
 .container{
-    width:95%;
-    max-width:400px;
+    width:350px;
+    margin:60px auto;
     background:white;
-    margin:40px auto;
     padding:25px;
     border-radius:10px;
-    box-shadow:0 0 15px rgba(0,0,0,0.2);
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
     text-align:center;
 }
+
 input{
     width:100%;
     padding:10px;
     margin:8px 0;
-    border-radius:5px;
-    border:1px solid #ccc;
 }
+
 button{
     width:100%;
     padding:10px;
-    background:#001f3f;
+    background:#203a43;
     color:white;
     border:none;
-    border-radius:5px;
     cursor:pointer;
 }
-button:hover{
-    background:#003366;
-}
-.link{
-    color:blue;
-    cursor:pointer;
-    font-size:14px;
-}
-#dashboard, #marksheet, #adminPanel{
+
+#marksheet{
     display:none;
-    padding:20px;
+    margin-top:20px;
 }
-.card{
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 0 15px rgba(0,0,0,0.2);
-    max-width:500px;
-    margin:20px auto;
-}
-table{
+
+#marksheet img{
     width:100%;
-    border-collapse:collapse;
-}
-table, th, td{
-    border:1px solid #ccc;
-}
-th, td{
-    padding:8px;
-}
-.admin-btn{
-    background:darkred;
 }
 </style>
 </head>
+
 <body>
 
-<div class="header">🎓 Shivam Singh University</div>
+<!-- Header with Thumbnail -->
+<div class="header">
+    <img src="thumbnail.jpg">
+    <h3>B.N.M.U Madhepura - Student Portal</h3>
+</div>
 
-<!-- STUDENT LOGIN -->
-<div class="container" id="loginBox">
-<h2>Student Login</h2>
-<input type="text" id="mobile" placeholder="Mobile Number">
-<input type="password" id="password" placeholder="Password">
+<div class="container">
+
+<input type="text" id="mobile" placeholder="Enter Mobile Number">
+<input type="password" id="password" placeholder="Enter Password">
+
 <button onclick="login()">Login</button>
-<p class="link" onclick="showRegister()">New Student? Register</p>
-<p class="link" onclick="showAdmin()">Admin Login</p>
-</div>
 
-<!-- REGISTER -->
-<div class="container" id="registerBox" style="display:none;">
-<h2>Student Registration</h2>
-<input type="text" placeholder="Full Name">
-<input type="text" placeholder="Mobile Number">
-<input type="password" placeholder="Create Password">
-<button onclick="showLogin()">Register</button>
-</div>
-
-<!-- DASHBOARD -->
-<div id="dashboard">
-<div class="card">
-<h2>Welcome Shivam Singh</h2>
-<p><strong>Roll No:</strong> 885</p>
-<p><strong>Course:</strong> B.A</p>
-<p><strong>Status:</strong> Active</p>
-<button onclick="openMarksheet()">View Marksheet</button>
-<button onclick="logout()">Logout</button>
-</div>
-</div>
-
-<!-- MARKSHEET -->
 <div id="marksheet">
-<div class="card" id="resultCard">
-<h2>University Marksheet</h2>
-<p><strong>Name:</strong> Shivam Singh</p>
-<p><strong>Roll No:</strong> 885</p>
-<table>
-<tr><th>Subject</th><th>Marks</th></tr>
-<tr><td>Hindi</td><td>78</td></tr>
-<tr><td>English</td><td>82</td></tr>
-<tr><td>History</td><td>75</td></tr>
-<tr><td>Political Science</td><td>80</td></tr>
-<tr><td><strong>Total</strong></td><td><strong>315 / 400</strong></td></tr>
-</table>
-<br>
-<button onclick="downloadResult()">Download Result</button>
-<button onclick="backDashboard()">Back</button>
-</div>
+    <h3>Student Marksheet</h3>
+    <img src="IMG_20260312_142131.jpg">
 </div>
 
-<!-- ADMIN PANEL -->
-<div class="container" id="adminPanel">
-<h2>Admin Login</h2>
-<input type="text" id="adminUser" placeholder="Admin Username">
-<input type="password" id="adminPass" placeholder="Admin Password">
-<button class="admin-btn" onclick="adminLogin()">Login</button>
 </div>
 
 <script>
-
 function login(){
     var mobile=document.getElementById("mobile").value;
-    var pass=document.getElementById("password").value;
+    var password=document.getElementById("password").value;
 
-    if(mobile==="7280804309" && pass==="shivam@@"){
-        document.getElementById("loginBox").style.display="none";
-        document.getElementById("dashboard").style.display="block";
+    if(mobile=="7280804309" && password=="shivam@@"){
+        document.getElementById("marksheet").style.display="block";
     }else{
-        alert("Invalid Login Details");
+        alert("Wrong Mobile Number or Password");
     }
 }
-
-function showRegister(){
-    document.getElementById("loginBox").style.display="none";
-    document.getElementById("registerBox").style.display="block";
-}
-
-function showLogin(){
-    document.getElementById("registerBox").style.display="none";
-    document.getElementById("adminPanel").style.display="none";
-    document.getElementById("loginBox").style.display="block";
-}
-
-function logout(){
-    document.getElementById("dashboard").style.display="none";
-    document.getElementById("loginBox").style.display="block";
-}
-
-function openMarksheet(){
-    document.getElementById("dashboard").style.display="none";
-    document.getElementById("marksheet").style.display="block";
-}
-
-function backDashboard(){
-    document.getElementById("marksheet").style.display="none";
-    document.getElementById("dashboard").style.display="block";
-}
-
-function downloadResult(){
-    window.print();
-}
-
-function showAdmin(){
-    document.getElementById("loginBox").style.display="none";
-    document.getElementById("adminPanel").style.display="block";
-}
-
-function adminLogin(){
-    var user=document.getElementById("adminUser").value;
-    var pass=document.getElementById("adminPass").value;
-
-    if(user==="admin" && pass==="admin123"){
-        alert("Admin Login Successful");
-        showLogin();
-    }else{
-        alert("Wrong Admin Details");
-    }
-}
-
 </script>
 
 </body>
-  </html>
+</html>
